@@ -1,0 +1,965 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  /* padding-bottom: ; */
+  background-color: rgb(1, 5, 207); /* Warna utama jumbotron */
+  transition: transform 0.3s ease; /* Animasi saat transform */
+}
+
+.navbar .collapse .navbar-nav a {
+  color: white;
+  background-color: rgb(1, 5, 207);
+}
+.navbar img {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand span {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Viga", serif;
+  color: white;
+}
+
+.navbar-brand p {
+  font-size: 12px;
+  margin: 0;
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white;
+  font-size: 18px;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: lightgray;
+}
+
+/* .navbar .btn-primary.tombol {
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 20px;
+} */
+
+.navbar-toggler {
+  border: 2px solid white; /* Border berwarna putih */
+  border-radius: 5px; /* Opsional: Untuk sedikit membulatkan sudut */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .navbar .navbar-nav .nav-link {
+    font-size: 16px;
+    /* margin-right: 0; */
+    background-color: rgb(1, 5, 207);
+  }
+}
+
+/* .navbar-brand {
+  font-family: "Viga", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+} */
+
+/* jumbotron */
+.jumbotron {
+  background-color: rgb(1, 5, 207); /* Warna utama jumbotron */
+  color: white;
+  min-height: 100vh; /* Menutupi seluruh tinggi layar */
+  display: flex;
+  align-items: center; /* Pusatkan konten secara vertikal */
+  padding-top: 150px;
+  padding-bottom: 0; /* Hilangkan padding bawah */
+  position: relative;
+  margin-bottom: 0; /* Hilangkan margin bawah */
+}
+
+.jumbotron::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Gradasi hanya mencakup bagian bawah jumbotron */
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 80%);
+  z-index: 1; /* Letakkan gradasi di atas background utama */
+  pointer-events: none; /* Pastikan gradasi tidak memengaruhi interaksi */
+}
+
+.jumbotron .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2; /* Pastikan konten berada di atas gradasi */
+  position: relative;
+}
+
+.jumbotron h2 {
+  background-color: red;
+  color: white;
+  font-size: 25px;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  /* width: 500px; */
+}
+
+.jumbotron p {
+  color: white;
+  font-size: 20px;
+  font-family: "Itim", cursive;
+  /* text-align: justify; */
+  margin: 20px 0;
+}
+
+.jumbotron h3 {
+  color: white;
+  font-size: 50px;
+  font-family: "Viga", serif;
+}
+
+.jumbotron h1 {
+  background-color: rgb(17, 17, 102);
+  color: rgb(240, 177, 4);
+  font-size: 35px;
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 20px 0;
+}
+
+.jumbotron img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.jumbotron .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Tambahan CSS untuk mode responsif tombol */
+.jumbotron .button-group .btn {
+  padding: 10px 20px; /* Ukuran default padding tombol */
+  font-size: 18px; /* Ukuran teks default */
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px; /* Jarak antara teks dan ikon */
+  transition: all 0.3s ease;
+}
+
+.jumbotron .btn img.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .jumbotron .button-group {
+    flex-direction: column; /* Tombol dalam satu kolom */
+    gap: 10px; /* Jarak antar tombol */
+  }
+
+  .jumbotron .button-group .btn {
+    padding: 8px 15px; /* Ukuran padding lebih kecil untuk HP */
+    font-size: 14px; /* Ukuran teks lebih kecil */
+    width: auto; /* Lebar tombol mengikuti panjang teks dan ikon */
+    justify-content: center; /* Posisikan teks tombol di tengah */
+  }
+
+  .jumbotron .btn img.icon {
+    width: 16px; /* Ukuran ikon lebih kecil */
+    height: 16px;
+    margin-right: 5px; /* Jarak kecil untuk ikon di HP */
+  }
+}
+
+/* Style untuk Section Klien Kami */
+.clients {
+  background-color: #fff; /* Warna background untuk klien */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.clients h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: "viga", sans-serif;
+}
+
+.clients p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.clients .logos-wrapper {
+  overflow: hidden; /* Hanya logo dalam area terlihat */
+  width: 100%;
+  position: relative;
+}
+
+.clients .logos {
+  display: flex;
+  gap: 30px; /* Jarak antar logo */
+  animation: slide 20s linear infinite; /* Gerakan dari kiri ke kanan */
+}
+
+.clients .logos img {
+  max-height: 50px;
+  margin: 0 15px;
+  transition: filter 0.3s ease;
+}
+
+.clients .logos img:hover {
+  filter: grayscale(0%);
+}
+
+/* Animasi untuk pergerakan */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Style untuk Digital Agency */
+.digital-agency {
+  background-color: #f5f5dc;
+  padding: 50px 0;
+}
+
+.digital-agency .text-content h3 {
+  color: #ff6600;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.digital-agency .text-content p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.digital-agency .btn-primary {
+  background-color: #ff6600;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.digital-agency .btn-primary:hover {
+  background-color: #e65c00;
+}
+
+/* Style untuk Video */
+.video-content iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .clients .logos img {
+    margin: 10px 0;
+  }
+
+  .digital-agency .text-content {
+    text-align: center;
+  }
+
+  .digital-agency .btn-primary {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Kenapa harus Desain nin */
+.alasan {
+  background-color: rgb(1, 5, 207);
+  padding-bottom: 100px;
+}
+.background-orange {
+  background-color: rgb(1, 5, 207);
+}
+
+.icon {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: white;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: white;
+  padding-top: 50px;
+  font-family: "viga";
+}
+
+/* PORTPOLIO */
+.portpolio-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  background-color: rgb(158, 151, 149);
+  gap: 20px; /* Jarak antar baris */
+  padding-bottom: 50px;
+}
+
+.logos {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+.logos img {
+  max-height: 200px;
+  margin: 0 15px;
+  transition: filter 0.3s ease;
+}
+
+.logos img:hover {
+  filter: grayscale(0%);
+}
+
+/* Animasi untuk setiap baris */
+@keyframes slide-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.row1 {
+  animation: slide-left 10s linear infinite;
+}
+
+.row2 {
+  animation: slide-right 10s linear infinite;
+}
+
+.row3 {
+  animation: slide-left 10s linear infinite;
+}
+
+.row4 {
+  animation: slide-right 10s linear infinite;
+}
+
+/* Maps */
+.map-container {
+  width: 100%;
+  /* max-width: 800px; */
+  background: orangered;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+  padding-top: 100px;
+  margin-top: -50px;
+}
+
+/* Pricing Section */
+/* Daftar Harga */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e3d7ff;
+  color: #333;
+}
+
+.pricing h2 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #333;
+  font-weight: bold;
+  font-family: "Viga", serif;
+}
+.pricing {
+  padding: -100px 20px;
+}
+
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  padding-top: -100px;
+}
+
+.pricing-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Pricing Card */
+.pricing-card:hover {
+  background-color: blue; /* Darker Purple */
+}
+
+.pricing-card:hover h3,
+.pricing-card:hover p,
+.pricing-card:hover i {
+  color: #fff; /* White text and icons when hovered */
+}
+
+.pricing-card i {
+  font-size: 40px;
+  color: orangered;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.pricing-card h3 {
+  font-size: 20px;
+  color: orangered;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.pricing-card p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Button Order Sekarang */
+.btn-order {
+  display: inline-block;
+  background-color: orangered; /* Light Purple */
+  color: #fff;
+  padding: 6px 15px; /* Adjusted padding to fit text */
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-order i {
+  margin-left: 5px;
+}
+
+.btn-order:hover {
+  background-color: orangered; /* Darker Purple */
+}
+
+/* Responsive Design: Two Rows of Cards */
+@media (max-width: 768px) {
+  .pricing-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* info panel */
+.info-panel {
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin-top: 50px;
+  /* margin-top: 10px; */
+  background-color: white;
+  /* padding: 30px; */
+}
+
+.info-panel h1 {
+  text-align: center;
+  padding-bottom: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+  font-family: "Viga", serif;
+  color: black;
+}
+
+.info-panel img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.info-panel h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.info-panel p {
+  font-size: 20px;
+  color: black;
+  margin-top: 20px;
+  font-weight: 300;
+}
+/* Title styling */
+.map-title {
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: green;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Map frame */
+.map-frame {
+  width: 100%;
+  height: 400px;
+  border: none;
+  transition: transform 0.5s ease-in-out;
+}
+
+.map-frame:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .map-frame {
+    height: 300px;
+  }
+
+  .map-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* TESTIMONI */
+
+.testimoni-section {
+  padding-bottom: 20px;
+  font-family: "viga", sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+.testimoni-gallery {
+  display: flex;
+  justify-content: center; /* Posisikan galeri di tengah */
+  align-items: center;
+  flex-wrap: wrap; /* Agar responsif saat layar kecil */
+  gap: 20px; /* Spasi antar item */
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+/* Set ukuran container testimoni */
+.testimoni-item {
+  width: 100%;
+  max-width: 300px; /* Lebar maksimal tiap item */
+  height: auto;
+  border-radius: 10px; /* Membuat sudut elemen melengkung */
+  overflow: hidden; /* Agar gambar tidak keluar dari container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+
+.testimoni-item {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimoni-item img {
+  width: 100%; /* Lebar gambar mengikuti container */
+  height: 100%; /* Tinggi gambar mengikuti container */
+  object-fit: contain; /* Menampilkan gambar full tanpa terpotong */
+  object-position: center; /* Posisikan gambar di tengah */
+}
+
+/* Rating Google */
+.rating-google {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  color: #333;
+}
+
+.rating-google p {
+  color: black;
+}
+
+.rating-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rating-text h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stars {
+  color: gold;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.google-logo {
+  width: 80px;
+  margin-top: 10px;
+}
+
+/* Testimoni Klien */
+.testimoni-client {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.client-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: left;
+}
+
+.client-item h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.client-item p {
+  font-size: 14px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .testimoni-gallery {
+    gap: 15px;
+  }
+
+  .testimoni-item {
+    max-width: 90%; /* Lebar maksimal pada layar kecil */
+    margin: 0 auto;
+  }
+
+  .rating-google {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimoni-item {
+    max-width: 100%; /* Lebar penuh pada layar sangat kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .client-item {
+    max-width: 90%;
+  }
+}
+
+/* CARA ORDER */
+
+.cara-order {
+  background-color: #f3e6ca;
+  padding: 40px 0;
+}
+
+.cara-order h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.cara-order p.subtitle {
+  text-align: center;
+  color: black;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.cara-order .icon {
+  color: #9c4aff;
+}
+
+.cara-order h4 {
+  color: black;
+}
+
+.cara-order p {
+  color: black;
+}
+
+/* Ourteam */
+
+.ourteam {
+  background-color: white;
+  background-size: cover; /* Mengatur gambar agar menutupi seluruh layar */
+  background-position: center; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Tidak mengulang gambar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.ourteam img {
+  width: 1000px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+.paragraf p {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0 120px 100px;
+}
+
+/* footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex; /* Membuat logo dan tulisan sejajar horizontal */
+  align-items: center; /* Vertikal sejajar di tengah */
+}
+
+.logo-container img {
+  width: 80px; /* Ukuran logo */
+  height: auto; /* Menjaga proporsi logo */
+  margin-right: 0; /* Hilangkan jarak kanan */
+}
+
+.tokoonline {
+  font-size: 40px;
+  color: #e65c00;
+  font-weight: bold;
+  margin-left: 10px; /* Tambahkan sedikit jarak antara logo dan teks */
+}
+
+.col-md-4 {
+  flex-basis: 30%;
+  margin: 20px 0;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+footer p {
+  font-size: 17px;
+}
+
+.gambar {
+  width: 30px;
+  height: 30px;
+}
+
+.judul {
+  color: #e65c00;
+  font-size: 30px;
+}
+
+footer hr {
+  width: 100px;
+  color: #e65c00;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .logo-container {
+    flex-direction: column; /* Ubah ke kolom untuk layar kecil */
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-container img {
+    margin-right: 0;
+    margin-bottom: 10px; /* Tambahkan jarak bawah pada logo */
+  }
+
+  .tokoonline {
+    margin-left: 0; /* Hilangkan margin kiri untuk layar kecil */
+  }
+
+  .col-md-4 {
+    flex-basis: 100%;
+    margin: 20px 0;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Tambahkan margin-top positif pada elemen target */
+#alasan {
+  margin-top: 50px;
+}
+
+#testimoni {
+  margin-top: 100px; /* Sesuaikan dengan tinggi navbar */
+}
+
+#pricing {
+  margin-top: 60px; /* Sesuaikan dengan tinggi navbar */
+}
+
+/* WA BOT */
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.whatsapp-chat:hover {
+  background-color: #1ebe5b;
+}
+.whatsapp-chat i {
+  font-size: 28px;
+}
